@@ -1,7 +1,6 @@
 const Todo = require("../models/todo_model.js");
 
 function create(req, res) {
-  console.log("request body is ", req.body);
   const todo = new Todo({
     title: req.body.title,
     description: req.body.description,
@@ -23,7 +22,6 @@ function create(req, res) {
 }
 
 function findAll(req, res) {
-  // Todo.find({ title: "title1" }
   Todo.find((err, todos) => {
     if (err) {
       res.status(500).send({
